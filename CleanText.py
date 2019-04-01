@@ -20,7 +20,9 @@ class CleanText:
     
     for attr in values:
         attributes.append(attr.split(","))
-
+    
+    #attributes = attributes[0: -39990]
+    
     
     i = 0
     while (i < len(attributes)):
@@ -97,11 +99,11 @@ class CleanText:
             temp_string += word + " "
         temp_string = temp_string[0:-1] #remove last extra space
         temp_string += "," + attributes[class_index][1] + "\n"
-        #print(temp_string)
+        print(temp_string)
         write_string += temp_string #add the review with its cleaned text and its class added back
         class_index += 1
-        print(class_index)
-
+        
+    write_string = write_string[0:-1]
     cleaned_file.write(write_string) #print to the file CleanText_out.csv
     cleaned_file.close()
 
