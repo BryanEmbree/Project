@@ -1,0 +1,5 @@
+1: Run CleanText.py, it will use train.csv and output CleanText_out.csv
+2: Run RemoveInfrequentWords.py, it will use CleanText_out.csv and output RemoveInfrequentWords_out.csv
+3: Run sparceARFFGen.py, it will use RemoveInfrequentWords_out.csv and the output can be redirected to an ARFF file (sparceARFFGen_out.arff in this example)
+
+The data can now be used for feature selection.
