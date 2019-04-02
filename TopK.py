@@ -10,13 +10,14 @@ class TopK:
     ig_raw.close()
 
 
-    k = 100 #modify this
+    k = 10 #modify this
     split_chi = chi_text.split("\n")
     split_ig = ig_text.split("\n")
     chi_line = split_chi[-3] #get the third last line
     ig_line = split_ig[-3]
     chi_values = chi_line.split(",")
     ig_values = ig_line.split(",")
+    class_number = len(chi_values) + 1
     chi_values = chi_values[0:-1]
     ig_values = ig_values[0:-1]
     chi_first_colon = chi_values[0].find(":")
@@ -32,8 +33,8 @@ class TopK:
         ig_string += ig_values[count] + ","
         count += 1
     
-    chi_top_k_attributes.write(chi_string[0:-1])
-    ig_top_k_attributes.write(ig_string[0:-1])
+    chi_top_k_attributes.write(chi_string + str(class_number))
+    ig_top_k_attributes.write(ig_string + str(class_number))
     chi_top_k_attributes.close()
     ig_top_k_attributes.close()
 
