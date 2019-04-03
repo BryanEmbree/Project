@@ -10,7 +10,8 @@ class CleanText:
     stop_word_file.close()
     stop_word_list = stop_words.split("\n")
     stop_word_set = set(stop_word_list)
-    stop_word_set.remove('')
+    if '' in stop_word_set:
+        stop_word_set.remove('')
     training_data = text.read()
     text.close()
     values = training_data.split("\n") #split at each line, remove the last empty line and the first line header
@@ -20,6 +21,7 @@ class CleanText:
     
     for attr in values:
         attributes.append(attr.split(","))
+    
     
     #attributes = attributes[0: -39990]
     

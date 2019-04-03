@@ -10,7 +10,7 @@ class TopK:
     ig_raw.close()
 
 
-    k = 10 #modify this
+    k = 20 #modify this
     split_chi = chi_text.split("\n")
     split_ig = ig_text.split("\n")
     chi_line = split_chi[-3] #get the third last line
