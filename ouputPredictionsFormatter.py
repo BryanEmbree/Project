@@ -14,8 +14,8 @@ def processClass(input):
         matrixName.append(temp)
     return matrixName
 #--------------------
-input_test_id = loadFile('data/test.csv', 0)
-input_test_class = loadFile('data/predictions.csv', 2)
+input_test_id = loadFile('test.csv', 0)
+input_test_class = loadFile('predictions.csv', 2)
 input_test_class = processClass(input_test_class)
 f = open("Formated_Predictions.txt", "a")
 temp = "ID CLASS"
@@ -26,4 +26,3 @@ for i in range(len(input_test_id)):
     f.write(temp)
     f.write("\n")
 f.close()
-#print ("Fin
