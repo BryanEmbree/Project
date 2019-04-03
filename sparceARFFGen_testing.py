@@ -1,16 +1,16 @@
-# usage python3 sparceARFFGen.py > sparceARFFGen_out.arff
+# usage python3 sparceARFFGen_testing.py > sparceARFFGen_testing_out.arff
 # requires file "RemoveInfrequentWords_out.csv"
 import csv
 import pickle
 
-filename = "cleaned_training.csv"
+filename = "cleaned_test.csv"
 filename_out_features = "features.list"
 
 
 with open(filename_out_features, 'rb') as f:
     features = pickle.load(f)
 
-print(features)
+#print(features)
 
 print("@RELATION reviews")
 for i in range(0, len(features)):
