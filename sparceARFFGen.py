@@ -1,8 +1,10 @@
-#usage python3 sparceARFFGen.py > sparceARFFGen_out.arff
-#requires file "RemoveInfrequentWords_out.csv"
+# usage python3 sparceARFFGen.py > sparceARFFGen_out.arff
+# requires file "RemoveInfrequentWords_out.csv"
 import csv
+import pickle
 
 filename = "RemoveInfrequentWords_out.csv"
+filename_out_features = "features.list"
 myset = set()
 
 csvfile = open(filename, newline='')
@@ -35,3 +37,6 @@ for row in datareader:
         if count > 0:
             print(f'{i} {count},', end='')
     print(f'{len(features)} {row[1]}}}')
+
+with open(filename_out_features, 'wb') as f:
+    pickle.dump(features, f)
