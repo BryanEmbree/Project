@@ -17,7 +17,7 @@ def processClass(input):
 input_test_id = loadFile('test.csv', 0)
 input_test_class = loadFile('predictions.csv', 2)
 input_test_class = processClass(input_test_class)
-f = open("Formated_Predictions.txt", "a")
+f = open("Formated_Predictions.txt", "w+")
 temp = "ID CLASS"
 f.write(temp)
 f.write("\n")
